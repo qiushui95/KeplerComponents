@@ -6,6 +6,8 @@ plugins {
     kotlin("kapt")
 }
 
+setProperty("archivesBaseName", "kepler_update_model")
+
 android {
     compileSdkVersion(30)
     buildToolsVersion = "30.0.3"
@@ -18,9 +20,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                argument("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
-
+    sourceSets["main"].java.srcDirs("src/main/kotlin")
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -38,15 +46,16 @@ dependencies {
     implementation(AndroidDependency.Architecture.Starter.fullGradle)
     implementation(AndroidDependency.Architecture.Http.fullGradle)
     implementation(AndroidDependency.Architecture.Entity.fullGradle)
+    implementation(AndroidDependency.Architecture.Getter.fullGradle)
 
     implementation(AndroidDependency.MoShi.Core.fullGradle)
 
     kapt(AndroidDependency.MoShi.Compiler.fullGradle)
 
-    compileOnly(AndroidDependency.Coroutines.Core.fullGradle)
+    implementation(AndroidDependency.Coroutines.Core.fullGradle)
 
-    compileOnly(AndroidDependency.Koin.AndroidExt.fullGradle)
+    implementation(AndroidDependency.Koin.AndroidExt.fullGradle)
 
-    implementation(AndroidDependency.Room.Core.fullGradle)
+    implementation(AndroidDependency.Room.Ktx.fullGradle)
     kapt(AndroidDependency.Room.Compiler.fullGradle)
 }

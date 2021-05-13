@@ -1,5 +1,6 @@
 import son.ysy.useful.dependencies.AndroidDependency
 
+
 plugins {
     id("java-library")
     id("kotlin")
@@ -11,6 +12,9 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+setProperty("archivesBaseName", "kepler_update_entity")
+
+
 dependencies {
     implementation(AndroidDependency.Architecture.Model.fullGradle)
     implementation(AndroidDependency.Architecture.Http.fullGradle)
@@ -19,6 +23,6 @@ dependencies {
     implementation(AndroidDependency.MoShi.Core.fullGradle)
     kapt(AndroidDependency.MoShi.Compiler.fullGradle)
 
-    compileOnly(AndroidDependency.Coroutines.Core.fullGradle)
+    implementation(AndroidDependency.Coroutines.Core.fullGradle)
 
 }

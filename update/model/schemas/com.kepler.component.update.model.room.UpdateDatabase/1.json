@@ -1,0 +1,277 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "97db66ca93fcc3af0985317c6483a69f",
+    "entities": [
+      {
+        "tableName": "VersionInfo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `updateId` TEXT NOT NULL, `url` TEXT NOT NULL, `isForce` INTEGER NOT NULL, `currentVersion` TEXT NOT NULL, `targetVersion` TEXT NOT NULL, `isCallByUser` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateId",
+            "columnName": "updateId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isForce",
+            "columnName": "isForce",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentVersion",
+            "columnName": "currentVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetVersion",
+            "columnName": "targetVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCallByUser",
+            "columnName": "isCallByUser",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_VersionInfo_currentVersion",
+            "unique": false,
+            "columnNames": [
+              "currentVersion"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_VersionInfo_currentVersion` ON `${TABLE_NAME}` (`currentVersion`)"
+          },
+          {
+            "name": "index_VersionInfo_updateId_isCallByUser",
+            "unique": true,
+            "columnNames": [
+              "updateId",
+              "isCallByUser"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_VersionInfo_updateId_isCallByUser` ON `${TABLE_NAME}` (`updateId`, `isCallByUser`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "IgnoreRecord",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `updateId` TEXT NOT NULL, `time` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateId",
+            "columnName": "updateId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_IgnoreRecord_updateId",
+            "unique": false,
+            "columnNames": [
+              "updateId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_IgnoreRecord_updateId` ON `${TABLE_NAME}` (`updateId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "InstallRecord",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `updateId` TEXT NOT NULL, `time` INTEGER NOT NULL, `currentVersion` TEXT NOT NULL, `targetVersion` TEXT NOT NULL, `hasUpload` INTEGER NOT NULL DEFAULT 0)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateId",
+            "columnName": "updateId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentVersion",
+            "columnName": "currentVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetVersion",
+            "columnName": "targetVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasUpload",
+            "columnName": "hasUpload",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_InstallRecord_updateId",
+            "unique": false,
+            "columnNames": [
+              "updateId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_InstallRecord_updateId` ON `${TABLE_NAME}` (`updateId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UpdateLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `updateId` TEXT NOT NULL, `desc` TEXT NOT NULL, `currentVersion` TEXT NOT NULL, `targetVersion` TEXT NOT NULL, `status` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateId",
+            "columnName": "updateId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desc",
+            "columnName": "desc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentVersion",
+            "columnName": "currentVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetVersion",
+            "columnName": "targetVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DownloadStatus",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`updateId` TEXT NOT NULL, `percent` REAL NOT NULL, `isFailed` INTEGER NOT NULL, `path` TEXT, PRIMARY KEY(`updateId`))",
+        "fields": [
+          {
+            "fieldPath": "updateId",
+            "columnName": "updateId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "percent",
+            "columnName": "percent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFailed",
+            "columnName": "isFailed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "path",
+            "columnName": "path",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "updateId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '97db66ca93fcc3af0985317c6483a69f')"
+    ]
+  }
+}

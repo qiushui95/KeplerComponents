@@ -4,7 +4,9 @@
     <bytecodeTargetLevel target="1.8">
       <module name="Kepler_Components.app" target="15" />
       <module name="Kepler_Components.model" target="15" />
+      <module name="Kepler_Components.update.domain" target="15" />
       <module name="Kepler_Components.update.model" target="15" />
+      <module name="Kepler_Components.update.presentation" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../Sdk/Gradle/wrapper/dists/gradle-6.5.1-bin/1m5048aptkfynhbvolwgr4ej9/gradle-6.5.1" />
+        <option name="gradleJvm" value="15" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/update" />
+            <option value="$PROJECT_DIR$/update/domain" />
             <option value="$PROJECT_DIR$/update/entity" />
             <option value="$PROJECT_DIR$/update/model" />
+            <option value="$PROJECT_DIR$/update/presentation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

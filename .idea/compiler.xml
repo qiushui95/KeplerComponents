@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="Kepler_Components.app" target="15" />
+      <module name="Kepler_Components.model" target="15" />
+      <module name="Kepler_Components.update.model" target="15" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

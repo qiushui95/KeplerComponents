@@ -2,11 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
-      <module name="Kepler_Components.app" target="15" />
       <module name="Kepler_Components.model" target="15" />
-      <module name="Kepler_Components.update.domain" target="15" />
-      <module name="Kepler_Components.update.model" target="15" />
-      <module name="Kepler_Components.update.presentation" target="15" />
+      <module name="KeplerComponents.app" target="11" />
+      <module name="KeplerComponents.buildSrc" target="15" />
+      <module name="KeplerComponents.update.domain" target="11" />
+      <module name="KeplerComponents.update.model" target="11" />
+      <module name="KeplerComponents.update.presentation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

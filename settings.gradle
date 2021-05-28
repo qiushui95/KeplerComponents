@@ -1,0 +1,8 @@
+rootProject.name = "KeplerComponents"
+
+include(":app")
+
+include(":update:presentation")
+include(":update:domain")
+include(":update:model")
+include(":update:entity")

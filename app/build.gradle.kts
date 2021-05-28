@@ -3,7 +3,6 @@ import son.ysy.useful.dependencies.AndroidDependency
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android")
 }
 
 android {

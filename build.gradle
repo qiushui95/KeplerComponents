@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+        classpath "com.github.qiushui95:AndroidDependencies:1.4.24"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+        maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots" }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    architecture = [
+            Starter   : "com.github.qiushui95.MyArchitecture:architecture-starter:1.0.14",
+            DomainImpl: "com.github.qiushui95.MyArchitecture:architecture-domain-impl:1.0.14",
+            FlowWork  : "com.github.qiushui95.MyArchitecture:architecture-flow-work:1.0.14",
+            Error     : "com.github.qiushui95.MyArchitecture:architecture-error:1.0.14",
+            Model     : "com.github.qiushui95.MyArchitecture:architecture-model:1.0.14",
+            Http      : "com.github.qiushui95.MyArchitecture:architecture-http:1.0.14",
+            Entity    : "com.github.qiushui95.MyArchitecture:architecture-entity:1.0.14",
+            Getter    : "com.github.qiushui95.MyArchitecture:architecture-getter:1.0.14",
+    ]
+
+    basePopup = "io.github.razerdp:BasePopup:3.1.0-SNAPSHOT"
+
+    download = "com.arialyy.aria:core:3.8.15"
+
+    lifecycle = [
+            ViewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    ]
+
+    fragment = "androidx.fragment:fragment-ktx:1.3.4"
+
+    activity = "androidx.activity:activity-ktx:1.2.3"
+
+    coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+
+    koin = [
+            Android: "io.insert-koin:koin-android-ext:3.0.2"
+    ]
+
+    util = "com.blankj:utilcodex:1.30.6"
+
+    workManager = "androidx.work:work-runtime-ktx:2.5.0"
+
+    moshi = [
+            Core    : "com.squareup.moshi:moshi:1.12.0",
+            Compiler: "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+    ]
+
+    room = [
+            Core    : "androidx.room:room-ktx:2.3.0",
+            Compiler: "androidx.room:room-compiler:2.3.0"
+    ]
+
+    jodaTime="joda-time:joda-time:2.10.10"
+}

@@ -1,0 +1,19 @@
+plugins {
+    id("java-library")
+    id("kotlin")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+
+}
+
+ext {
+    PUBLISH_ARTIFACT_ID = "update_entity"
+}
+
+apply from:  "../../gradle/jitpack.gradle"
